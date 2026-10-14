@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f6f0" />
+  <meta name="description" content="OrderSaathi turns messy customer messages into structured orders using open-source AI in your browser." />
+  <title>OrderSaathi — Small Business, Smarter Orders</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="module" src="script.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="OrderSaathi home">
+      <span class="brand-mark">o.</span>
+      <span>order<span class="brand-light">saathi</span></span>
+    </a>
+    <div class="top-right">
+      <span class="privacy"><span class="live-dot"></span> Local AI workspace</span>
+      <span class="avatar">OS</span>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow"><span>✳</span> YOUR BUSINESS, LESS CHAOS</div>
+      <h1>Every message has a<br /><span>business opportunity.</span></h1>
+      <p class="hero-copy">
+        Turn customer messages into clear orders, spot missing details,
+        and reply like a pro — without handing customer data to an AI API.
+      </p>
+    </section>
+
+    <section class="workspace">
+      <div class="section-heading">
+        <div>
+          <span class="step-label">01 / INTAKE</span>
+          <h2>Let's decode an order.</h2>
+        </div>
+        <button class="text-button" id="sampleBtn" type="button">
+          Try sample ↗
+        </button>
+      </div>
+
+      <div class="input-card">
+        <div class="field-head">
+          <label for="businessType">YOUR BUSINESS</label>
+          <span class="field-note">Personalize the response</span>
+        </div>
+        <select id="businessType">
+          <option value="home bakery">Home bakery</option>
+          <option value="home kitchen or tiffin service">Tiffin / home kitchen</option>
+          <option value="handmade products shop">Handmade products</option>
+          <option value="freelance creative service">Freelance services</option>
+          <option value="small local business">Other small business</option>
+        </select>
+
+        <div class="field-head message-head">
+          <label for="customerMessage">CUSTOMER'S MESSAGE</label>
+          <span class="field-note" id="charCount">0 / 1500</span>
+        </div>
+        <textarea
+          id="customerMessage"
+          maxlength="1500"
+          placeholder="Paste a customer message here — English, Hinglish, shorthand, anything..."
+          rows="6"
+        ></textarea>
+
+        <div class="input-footer">
+          <span class="input-hint">↳ Don't clean it up first. That's the point.</span>
+          <button class="primary-button" id="analyzeBtn" type="button">
+            <span id="analyzeIcon">✳</span>
+            <span id="analyzeLabel">Decode this order</span>
+            <span>→</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="model-strip">
+        <span class="model-icon">◈</span>
+        <div>
+          <strong>Powered by open-weight AI</strong>
+          <p id="modelStatus">AI model loads on your device. First run needs internet.</p>
+        </div>
+        <span class="model-badge" id="modelBadge">MODEL NOT LOADED</span>
+      </div>
+
+      <section class="results" id="results" aria-live="polite" hidden>
+        <div class="results-header">
+          <div>
+            <span class="step-label">02 / YOUR ORDER BRIEF</span>
+            <h2>Here's what we understood.</h2>
+          </div>
+          <span class="ready-pill"><span class="live-dot"></span> Analysis ready</span>
+        </div>
+
+        <div class="result-card">
+          <div class="result-title">
+            <span class="result-icon">✳</span>
+            <div>
+              <h3>AI order analysis</h3>
+              <p>Review before confirming with your customer.</p>
+            </div>
+          </div>
+          <div id="analysisOutput" class="analysis-output"></div>
+          <div class="result-actions">
+            <button class="secondary-button" id="copyBtn" type="button">Copy order brief</button>
+            <button class="secondary-button" id="downloadBtn" type="button">Download .txt ↓</button>
+          </div>
+        </div>
+
+        <p class="disclaimer">
+          AI can misunderstand messages. Confirm quantities, dates, prices,
+          and other important details with the customer before accepting an order.
+        </p>
+      </section>
+
+      <div class="error-box" id="errorBox" role="alert" hidden></div>
+
+      <section class="how-it-works">
+        <span class="step-label">BUILT FOR REAL PEOPLE</span>
+        <div class="mini-grid">
+          <article>
+            <span class="mini-icon">01</span>
+            <h3>Paste the chaos</h3>
+            <p>Use the raw message you actually received.</p>
+          </article>
+          <article>
+            <span class="mini-icon">02</span>
+            <h3>Let AI organize</h3>
+            <p>Extract the request, uncertainties and next steps.</p>
+          </article>
+          <article>
+            <span class="mini-icon">03</span>
+            <h3>Reply with confidence</h3>
+            <p>Copy a clear draft and finish the conversation.</p>
+          </article>
+        </div>
+      </section>
+    </section>
+
+    <footer>
+      <a class="brand footer-brand" href="#">
+        <span class="brand-mark">o.</span>
+        <span>ordersaathi</span>
+      </a>
+      <span>Small businesses deserve smarter tools.</span>
+      <span>Open innovation · Local-first AI</span>
+    </footer>
+  </main>
+</body>
+</html>
